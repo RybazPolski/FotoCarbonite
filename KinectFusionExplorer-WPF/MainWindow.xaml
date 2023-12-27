@@ -276,19 +276,10 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Orientation="Vertical">
-                        <Button Style="{StaticResource MeshButton}" Content="Create Mesh" Margin="10 10 5 0" Click="CreateMeshButtonClick" AutomationProperties.AutomationId="CreateMesh"/>
+                        <Button Style="{StaticResource MeshButton}" Margin="10 30 5 0" Content="Create Mesh" Click="CreateMeshButtonClick" AutomationProperties.AutomationId="CreateMesh"/>
+                        <Button Style="{StaticResource ResetButton}" Margin="10 20 5 0" Content="Reset Reconstruction" Click="ResetReconstructionButtonClick" AutomationProperties.AutomationId="ResetReconstruction"/>
 
-                        <StackPanel Orientation="Horizontal" Margin="0 -3 0 0">
-                            <RadioButton Name="stlFormat" Style="{StaticResource KinectRadioButton}" Content="STL" Margin="30 5 0 0" IsChecked="True" AutomationProperties.AutomationId="STLFormat"/>
-                            <RadioButton Name="objFormat" Style="{StaticResource KinectRadioButton}" Content="OBJ" Margin="5 5 0 0" AutomationProperties.AutomationId="OBJFormat"/>
-                            <RadioButton Name="plyFormat" Style="{StaticResource KinectRadioButton}" Content="PLY" Margin="5 5 5 0" AutomationProperties.AutomationId="PLYFormat"/>
-                        </StackPanel>
-
-                        <Button Margin="10 20 5 0" Style="{StaticResource ResetButton}" Content="Reset Reconstruction" Click="ResetReconstructionButtonClick" AutomationProperties.AutomationId="ResetReconstruction"/>
-
-                        <CheckBox Margin="10 20 10 0" Style="{StaticResource KinectCheckBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Use Camera Pose Finder" IsChecked="{Binding UseCameraPoseFinder}" AutomationProperties.AutomationId="UseCameraPoseFinder"/>
-                        
-                        <Button Margin="10 15 10 5" Background="{StaticResource KinectPurpleBrush}" BorderBrush="White" BorderThickness="2" Content="Reset Virtual Camera" Height="35" Width="186" Foreground="White" Focusable="False" Click="ResetCameraButtonClick"/>
+                        <Button Margin="10 45 10 5" Background="{StaticResource KinectPurpleBrush}" BorderBrush="White" BorderThickness="2" Content="Reset Virtual Camera" Height="35" Width="186" Foreground="White" Focusable="False" Click="ResetCameraButtonClick"/>
                     </StackPanel>
                 </Grid>
             </Border>
@@ -297,9 +288,9 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="0"/> <!-- Dunno, I tried to delete it but then weird things happened, so I'm setting height to 0. It's my first time with WPF lmao-->
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
@@ -312,11 +303,10 @@
                         <TextBlock Style="{StaticResource KinectTextFormat}" Foreground="White">Image Options</TextBlock>
                     </StackPanel>
 
-                    <CheckBox Grid.Row="1" Grid.Column="0" Style="{StaticResource KinectCheckBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 10 0" Content="Capture Color" IsChecked="{Binding CaptureColor}" AutomationProperties.AutomationId="CaptureColor"/>
-                    <CheckBox Grid.Row="1" Grid.Column="1" Style="{StaticResource KinectCheckBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 10 0" Content="Mirror Depth" IsChecked="{Binding MirrorDepth}" AutomationProperties.AutomationId="MirrorDepth"/>
-                    <CheckBox Grid.Row="2" Grid.Column="0" Style="{StaticResource KinectCheckBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 10 0" Content="Pause Integration" IsChecked="{Binding PauseIntegration}" AutomationProperties.AutomationId="PauseIntegration"/>
-                    <CheckBox Grid.Row="2" Grid.Column="1" Style="{StaticResource KinectCheckBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 10 0" Content="Volume Graphics" IsChecked="{Binding VolumeGraphics}" AutomationProperties.AutomationId="VolumeGraphics"/>
-                    <CheckBox Grid.Row="3" Grid.Column="0" Style="{StaticResource KinectCheckBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 10 0" Content="Kinect View" IsChecked="{Binding KinectView}" AutomationProperties.AutomationId="KinectView"/>
+                    <CheckBox Grid.Row="1" Grid.Column="1" Style="{StaticResource KinectCheckBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 10 0" Content="Mirror Depth" IsChecked="{Binding MirrorDepth}" AutomationProperties.AutomationId="MirrorDepth"/>
+                    <CheckBox Grid.Row="1" Grid.Column="0" Style="{StaticResource KinectCheckBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 10 0" Content="Pause Integration" IsChecked="{Binding PauseIntegration}" AutomationProperties.AutomationId="PauseIntegration"/>
+                    <CheckBox Grid.Row="2" Grid.Column="1" Style="{StaticResource KinectCheckBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 -10 10 0" Content="Volume Graphics" IsChecked="{Binding VolumeGraphics}" AutomationProperties.AutomationId="VolumeGraphics"/>
+                    <CheckBox Grid.Row="2" Grid.Column="0" Style="{StaticResource KinectCheckBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 -10 10 0" Content="Kinect View" IsChecked="{Binding KinectView}" AutomationProperties.AutomationId="KinectView"/>
 
                     <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Background="{StaticResource KinectPurpleBrush}" Margin="-1 0 -1 0">
                         <TextBlock Style="{StaticResource KinectTextFormat}" Foreground="White">Depth Threshold</TextBlock>

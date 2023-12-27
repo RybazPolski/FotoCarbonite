@@ -1,0 +1,11 @@
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.Fusion.dll
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.Fusion.pdb
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.dll
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.xml
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.csproj.AssemblyReference.cache
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.Resources.resources
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.csproj.GenerateResource.cache
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.csproj.CoreCompileInputs.cache
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.csproj.CopyComplete
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.dll
+C:\Users\julor\source\repos\FotoCarbonite\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.pdb

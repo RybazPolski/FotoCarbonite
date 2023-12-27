@@ -776,7 +776,7 @@ namespace Microsoft.Samples.Kinect.KinectFusionExplorer
         /// the camera pose history where key-frames and camera poseCount have been stored in the camera
         /// pose finder database to propose the most likely pose matches for the current camera input.
         /// </summary>
-        private bool autoFindCameraPoseWhenLost = true;
+        private bool autoFindCameraPoseWhenLost = false;
 
         /// <summary>
         /// Initializes a new instance of the MainWindow class.
@@ -3022,49 +3022,16 @@ namespace Microsoft.Samples.Kinect.KinectFusionExplorer
 
                 Win32.SaveFileDialog dialog = new Win32.SaveFileDialog();
 
-                if (true == this.stlFormat.IsChecked)
-                {
-                    dialog.FileName = "MeshedReconstruction.stl";
-                    dialog.Filter = "STL Mesh Files|*.stl|All Files|*.*";
-                }
-                else if (true == this.objFormat.IsChecked)
-                {
-                    dialog.FileName = "MeshedReconstruction.obj";
-                    dialog.Filter = "OBJ Mesh Files|*.obj|All Files|*.*";
-                }
-                else
-                {
-                    dialog.FileName = "MeshedReconstruction.ply";
-                    dialog.Filter = "PLY Mesh Files|*.ply|All Files|*.*";
-                }
+                dialog.FileName = "MeshedReconstruction.stl";
+                dialog.Filter = "STL Mesh Files|*.stl|All Files|*.*";
 
                 if (true == dialog.ShowDialog())
                 {
-                    if (true == this.stlFormat.IsChecked)
+                    using (BinaryWriter writer = new BinaryWriter(dialog.OpenFile()))
                     {
-                        using (BinaryWriter writer = new BinaryWriter(dialog.OpenFile()))
-                        {
-                            // Default to flip Y,Z coordinates on save
-                            KinectFusionHelper.SaveBinaryStlMesh(mesh, writer, true);
-                        }
+                        // Default to flip Y,Z coordinates on save
+                        KinectFusionHelper.SaveBinaryStlMesh(mesh, writer, true);
                     }
-                    else if (true == this.objFormat.IsChecked)
-                    {
-                        using (StreamWriter writer = new StreamWriter(dialog.FileName))
-                        {
-                            // Default to flip Y,Z coordinates on save
-                            KinectFusionHelper.SaveAsciiObjMesh(mesh, writer, true);
-                        }
-                    }
-                    else
-                    {
-                        using (StreamWriter writer = new StreamWriter(dialog.FileName))
-                        {
-                            // Default to flip Y,Z coordinates on save
-                            KinectFusionHelper.SaveAsciiPlyMesh(mesh, writer, true, this.colorCaptured);
-                        }
-                    }
-
                     this.ShowStatusMessage(Properties.Resources.MeshSaved);
                 }
                 else
